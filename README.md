@@ -26,13 +26,18 @@ FSM consisted of just one state `KeepLaneState`, which used previosly implemente
 Now it was a time to implement proper lane changes.
 First I decided to implement just a change to the left, debug it, and then 
 implement a change to the right and extract common code to the base class.
-I quickly discovered that SplineBasedLeftChangeCapablePlaner is breaking
+I quickly discovered that `SplineBasedLeftChangeCapablePlaner` is breaking
 acceleration limit, so I decided to implement new trajectory generator for lane changes
 specifically, which will generate path with D values changing smoothly from
 current lane's center to target lane's center. This resulted in 
-ChangeLanePathGenerator, with descendants LeftChangeLanePathGenerator & RightChangeLanePathGenerator.
-I also extracted common code to SplinePathGenerator and moved path generation for
-just keeping lane into KeepLanePathGenerator.
+`ChangeLanePathGenerator`, with descendants `LeftChangeLanePathGenerator` & `RightChangeLanePathGenerator`.
+I also extracted common code to `SplinePathGenerator` and moved path generation for
+just keeping lane into `KeepLanePathGenerator`.
+
+## State machine improvement
+
+To finalise state machine I've added `ChangeLaneToLeftState` and `ChangeLaneToRightState`, which use 
+corresponding path generators.
 
 ## Cost functions implementation and tuning
 
