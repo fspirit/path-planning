@@ -12,7 +12,7 @@
 
 const double ProperSpeedCost = 0.05;
 const double UnproperSpeedCost = 1.0;
-const double ChangeLaneAllowedSpeedThreshold = OptimalSpeed * 0.5
+const double ChangeLaneAllowedSpeedThreshold = OptimalSpeed * 0.5;
 
 class ChangeLaneOnProperSpeed
 {
