@@ -9,7 +9,6 @@
 
 #include "../../CartesianPoint.h"
 #include "../../Settings.h"
-
 #include "../../spline.h"
 
 const double StopCost = 0.8;

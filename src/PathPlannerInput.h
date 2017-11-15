@@ -6,6 +6,7 @@
 #define PATH_PLANNING_PATHPLANNERINPUT_H
 
 #include <vector>
+#include <limits>
 
 #include "CartesianPoint.h"
 #include "FrenetPoint.h"
