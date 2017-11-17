@@ -20,6 +20,10 @@ public:
     FrenetPoint CartesianToFrenet(const CartesianPoint& cartesianPoint) const;
     int NextWaypoint(CartesianPoint currentVehicleLocation) const;
     int ClosestWaypoint(CartesianPoint currentVehicleLocation) const;
+    inline double EuclidDistance(CartesianPoint p1, CartesianPoint p2) const
+    {
+        return sqrt((p2.X-p1.X)*(p2.X-p1.X)+(p2.Y-p1.Y)*(p2.Y-p1.Y));
+    }
 
 private:
     std::vector<CartesianPoint> mapPoints;
@@ -28,10 +32,6 @@ private:
     std::vector<double> mapPointsDY;
 
     void ReadMapFromCsvFile(const std::string& highwayMapCsvPath);
-    inline double EuclidDistance(CartesianPoint p1, CartesianPoint p2) const
-    {
-        return sqrt((p2.X-p1.X)*(p2.X-p1.X)+(p2.Y-p1.Y)*(p2.Y-p1.Y));
-    }
 };
 
 #endif //PATH_PLANNING_HIGHWAYMAP_H

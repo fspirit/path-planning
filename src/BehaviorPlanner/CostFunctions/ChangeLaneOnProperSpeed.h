@@ -10,7 +10,7 @@
 #include "../../PathPlannerInput.h"
 #include "../../Settings.h"
 
-const double ProperSpeedCost = 0.05;
+const double ProperSpeedCost = 0.15;
 const double UnproperSpeedCost = 1.0;
 const double ChangeLaneAllowedSpeedThreshold = OptimalSpeed * 0.5;
 

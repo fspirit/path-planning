@@ -11,7 +11,7 @@ const double HighPriority = 10 * 10 * 10;
 double CostCalculator::CalculateCostForPath(const std::vector<CartesianPoint> &path,
                                             const PathPlannerInput& input, int targetLane)
 {
-    return avoidCollisionFuction(path, input.OtherCars, map) * HighPriority +
+    return avoidCollisionFuction(path, input, map, targetLane) * HighPriority +
            keepMaxSpeedFunction(path) * RegularPriority +
            selectFastestLaneFunction(input, targetLane) * RegularPriority +
            penaliseLaneChangeFunction(input, targetLane) * RegularPriority;
