@@ -8,7 +8,7 @@
 inline double MphToMs(double mph) { return mph * 0.447; }
 
 const double MaxSpeed = 50.0;
-const double OptimalSpeed = 50.0 * 0.9;
+const double OptimalSpeed = MaxSpeed * 0.98;
 
 const double SpeedChangeDelta = 0.224;
 const double SimulatorRunloopPeriod = 0.02;

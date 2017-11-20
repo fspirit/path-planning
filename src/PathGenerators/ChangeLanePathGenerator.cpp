@@ -17,7 +17,7 @@ void ChangeLanePathGenerator::AddAnchors(const PathPlannerInput &input, std::vec
 
     std::vector<FrenetPoint> pp;
 
-    const double ds = 10.0;
+    const double ds = 15.0;
     double dd = 1.0 * GetDDeltaSign();
 
     FrenetPoint furthestAnchor;
@@ -41,19 +41,6 @@ void ChangeLanePathGenerator::AddAnchors(const PathPlannerInput &input, std::vec
         pp.push_back({s, FrenetPoint::LaneCenterDCoord(targetLane)});
         anchors.push_back(map.FrenetToCartesian({s, FrenetPoint::LaneCenterDCoord(targetLane)}));
     }
-
-//    std::cout << "----" << std::endl;
-//    for (auto& fp: pp)
-//    {
-//        std::cout << fp.S << ", " << fp.D << ", " << fp.Lane() << std::endl;
-//    }
-//    std::cout << "----" << std::endl;
-//    for (auto& p: anchors)
-//    {
-//        std::cout << p.X << ", " << p.Y << ", " << p.Theta << std::endl;
-//    }
-
-
 }
 
 

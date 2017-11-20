@@ -52,19 +52,9 @@ SplinePathGenerator::AnchorPointsGenerationResult SplinePathGenerator::GenerateA
 
         anchors.push_back(prevPoint);
         anchors.push_back(referencePoint);
-//        std::cout << "---- Base" << std::endl;
-//        for (auto& p: anchors)
-//        {
-//            std::cout << p.X << ", " << p.Y << ", " << p.Theta << std::endl;
-//        }
     }
 
     AddAnchors(input, anchors);
-
-//    std::sort(anchors.begin(), anchors.end(), [ ]( const CartesianPoint& lhs, const CartesianPoint& rhs )
-//    {
-//        return lhs.X < rhs.X;
-//    });
 
     return { referencePoint, anchors };
 }
@@ -86,8 +76,6 @@ SplinePathGenerator::GenerateNewPointsWithSpline(const tk::spline &newPathSpline
     const double pathEndpointX = 30;
     double pathEndpointY = newPathSpline(pathEndpointX);
     double pathLength = sqrt(pathEndpointX * pathEndpointX + pathEndpointY * pathEndpointY);
-
-//    std::cout << "Path length: " << pathLength << std::endl;
 
     std::vector<CartesianPoint> pathPoints;
 
@@ -116,8 +104,6 @@ tk::spline SplinePathGenerator::GetSplineFromAnchorPoints(const std::vector<Cart
         newPathAnchorsY.push_back(p.Y);
     }
     tk::spline spline;
-//    for (auto& p: newPathAnchorsX)
-//        std::cout << p << std::endl;
     spline.set_points(newPathAnchorsX, newPathAnchorsY);
     return spline;
 }

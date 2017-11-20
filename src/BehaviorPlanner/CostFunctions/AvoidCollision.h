@@ -14,7 +14,7 @@
 #include "../../Settings.h"
 #include "../../PathPlannerInput.h"
 
-const double CriticalSDistance = 15.0;
+const double CriticalSDistance = 20.0;
 
 class AvoidCollision
 {
