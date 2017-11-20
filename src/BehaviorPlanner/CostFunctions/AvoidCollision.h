@@ -20,7 +20,7 @@ class AvoidCollision
 {
 public:
     double operator()(const std::vector<CartesianPoint>& path,
-                      const const PathPlannerInput& input,
+                      const PathPlannerInput& input,
                       const HighwayMap& map,
                       int targetLane)
     {
